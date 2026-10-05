@@ -1,0 +1,43 @@
+{
+  "log": {
+    "loglevel": "warning"
+  },
+  "dns": {
+    "servers": [
+      "8.8.8.8",
+      "1.1.1.1"
+    ],
+    "queryStrategy": "AsIs"
+  },
+  "inbounds": [
+    {
+      "listen": "0.0.0.0",
+      "port": 8080,
+      "protocol": "vless",
+      "settings": {
+        "clients": [
+          {
+            "id": "f70a8fb3-2d7c-4337-96a6-1187c579e0fb",
+            "level": 0
+          }
+        ],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "httpupgrade",
+        "security": "none",
+        "httpupgradeSettings": {
+          "path": "/"
+        }
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom",
+      "settings": {
+        "domainStrategy": "AsIs"
+      }
+    }
+  ]
+}
